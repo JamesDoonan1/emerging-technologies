@@ -1,9 +1,4 @@
-﻿*** START OF THE PROJECT GUTENBERG EBOOK FRANKENSTEIN; OR, THE MODERN PROMETHEUS ***
-
-
-
-
-Frankenstein;
+﻿Frankenstein;
 
 or, the Modern Prometheus
 
@@ -40,6 +35,10 @@ by Mary Wollstonecraft (Godwin) Shelley
  Chapter 22
  Chapter 23
  Chapter 24
+
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK FRANKENSTEIN; OR, THE MODERN PROMETHEUS ***
 
 
 
