@@ -130,9 +130,27 @@ In this Task 2, the next character is selected based on the **weighted probabili
 
 --- 
 
- 
+### Justification for Implementation Approach
 
-### Justification for Approach  
+Although the trigram model was specified in the task, several key decisions were made in the implementation to ensure efficiency, clarity, and ease of use.
+
+1. **Data Structures**:
+   - I chose to use Python’s `defaultdict(int)` from the `collections` module to store the trigram counts. This decision simplifies the logic for counting trigrams, as `defaultdict` automatically initializes new keys with a value of `0`. This avoids the need for checking if a trigram already exists before updating its count, leading to cleaner and more efficient code.
+   - **Alternative**: I could have used a `Counter` from `collections`, which provides similar functionality but requires more manual checks. In this case, `defaultdict(int)` offered a straightforward approach with minimal overhead.
+
+2. **Text Preprocessing**:
+   - To clean the text, I removed all non-alphabetic characters except spaces and full stops, converted all letters to uppercase, and normalized multiple spaces. This ensures that the text input is consistent, allowing the trigram model to focus only on meaningful patterns.
+   - **Alternative**: Some models might retain punctuation or other special characters, but for this task, excluding them ensures that the trigrams reflect the core structure of English words.
+
+3. **Character-by-Character Generation**:
+   - The generation function, `generate_text()`, uses the `random.choices()` function to select the next character based on the trigram probabilities. This ensures that the generated text reflects the statistical distribution of the trigrams, with more frequent trigrams having a higher chance of being selected. This method allows for a balance between randomness and adherence to the underlying structure of the input data.
+   - **Alternative**: Other selection methods (e.g., greedy selection) could have been used, but `random.choices()` provides the necessary randomness to generate more varied text, preventing the model from producing overly deterministic or repetitive output.
+
+4. **Formatting for Readability**:
+   - I implemented line breaks every 80 characters to format the generated text into readable blocks. This makes it easier to review the output visually, as large blocks of text can become difficult to interpret without proper structure.
+   - **Alternative**: The output could have been left as one continuous string, but formatting it into multiple lines ensures better readability and allows for easier analysis of the results.
+
+By implementing these strategies, the model adheres to the task requirements while ensuring that the code is efficient, readable, and flexible. Each decision was made to streamline the process while maintaining clarity and structure, leading to better organization of both the code and the output.
 
 
 ### Development
