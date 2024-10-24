@@ -60,7 +60,7 @@ In this task, We were instructed to select five works from **Project Gutenberg**
   * **Comparison**  
   Keeping everything case sensitive could potentially improve the model's understanding of sentences beginning versus other parts of the text. However, this would increase the complexity and size of the model without really improving the results for this task.  
 
-**3.Choice of Texts from Project Gutenberg vs. Modern Texts**  
+**3. Choice of Texts from Project Gutenberg vs. Modern Texts**  
 **Project Gutenberg**  
   * Using pieces of literature from Project Gutenberg really offered a variety of styles. We were explicitly told to use this source but I think have such a variety f genres and writing styles from here really help the model generalise better.  
 **Other Sources**  
@@ -158,4 +158,27 @@ After sharing my results with ChatGPT. It was able to tell me some notable obser
 ---
 
 ## References
-- List of all references used throughout the project (e.g., research papers, documentation, and any sources cited).
+
+1. **Shannon, C. E.** (1948). *A Mathematical Theory of Communication*. Bell System Technical Journal.  
+   - This foundational paper introduced the concept of n-gram models in communication theory, which is the basis for trigram models used in language modeling.  
+   - Available at: [https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf)
+
+2. **Project Gutenberg**. (n.d.). *Free eBooks*.  
+   - Source of the five texts used to build the trigram model. Project Gutenberg provides a large collection of public domain books, making it a popular choice for text mining and natural language processing tasks.  
+   - Available at: [https://www.gutenberg.org](https://www.gutenberg.org)
+
+3. **Natural Language Toolkit (NLTK)**. (n.d.). *NLTK: Natural Language Processing with Python*.  
+   - A comprehensive library for natural language processing in Python, often used for tasks such as text cleaning, tokenization, and working with n-grams. Though not used directly in this project, NLTK provides valuable insights for implementing language models.  
+   - Available at: [https://www.nltk.org](https://www.nltk.org)
+
+4. **Python Documentation**. (n.d.). *The Python Standard Library*.  
+   - Official Python documentation for tools like `defaultdict` used in this project for counting trigrams efficiently.  
+   - Available at: [https://docs.python.org/3/library/collections.html#collections.defaultdict](https://docs.python.org/3/library/collections.html#collections.defaultdict)
+
+5. **Markov Chains for Language Modeling**. (n.d.). *Towards Data Science: An introduction to Markov chains in NLP*.  
+   - Explains how Markov chains and n-gram models are used for language generation and prediction, which is directly related to the concept of trigram models.  
+   - Available at: [https://towardsdatascience.com/markov-chains-and-nlp-48a6fb7d6306](https://towardsdatascience.com/markov-chains-and-nlp-48a6fb7d6306)
+
+6. **SpaCy Documentation**. (n.d.). *SpaCy: Industrial-strength Natural Language Processing*.  
+   - Although external libraries were not used, SpaCy's text processing techniques provide inspiration for how to structure and clean data in NLP tasks.  
+   - Available at: [https://spacy.io](https://spacy.io)
