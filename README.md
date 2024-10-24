@@ -37,8 +37,8 @@ This project submission includes four tasks and a final project (ELIZA chatbot) 
 ### Research
 **N-gram Models and Trigrams**  
 The trigram model used in Task 1 belongs to the broader class of **n-gram models**. Trigrams specifacally focuse on **sequence of three characters**. This allows the model to capture the structure of the English language much more efficiently than unigrams and bigrams which were looked at in lectures. The work of **Claude Shannon** was very important when it came to researching for this task. Shannon pioneered the study of probabilitic models in text generationinhis 1948 paper _A Mathematical Theory of Communication_. Trigrams, as a third-order Markov model, provide enough context for decent text generation without over complexity.   
-**Text Preprocessing in NLP**
-Preproccessing is a very important step in most natural language processing (NLP) tasks. It invlolves the processess of removing unwanted characters and standarising the format of the text to prevent irrelevant data from effecting the model. Some similar methods are used in NLP libraries like **NLTK** and **SpaCy**. These streamline tasks like removing punctuation and converting text to lowercase or uppercase.   
+**Text Preprocessing in NLP**  
+Preproccessing is a very important step in most natural language processing (NLP) tasks. It invlolves the processess of removing unwanted characters and standarising the format of the text to prevent irrelevant data from effecting the model. Some similar methods are used in NLP libraries like **NLTK** and **SpaCy**. These streamline tasks like removing punctuation and converting text to lowercase or uppercase.     
 **Project Gutenberg Texts**
 In this task, We were instucted to select five works from **Project Gutenberg**. What is interesting is that these texts represent a variety of writing styles and genres. This really helps broaden the model with a large spectrum of English usage.  
 
