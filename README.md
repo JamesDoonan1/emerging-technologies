@@ -4,6 +4,7 @@
 - [Overview](#overview)
 - [Task 1: Trigram Model](#task-1-trigram-model)
   - [Research](#task-1-research)
+  - [Comparison of Work](#task-1-comparison of work)
   - [Justification for Approach](#task-1-justification)
   - [Development](#task-1-development)
   - [Results](#task-1-results)
@@ -41,6 +42,14 @@ The trigram model used in Task 1 belongs to the broader class of **n-gram models
 Preproccessing is a very important step in most natural language processing (NLP) tasks. It invlolves the processess of removing unwanted characters and standarising the format of the text to prevent irrelevant data from effecting the model. Some similar methods are used in NLP libraries like **NLTK** and **SpaCy**. These streamline tasks like removing punctuation and converting text to lowercase or uppercase.     
 **Project Gutenberg Texts**
 In this task, We were instucted to select five works from **Project Gutenberg**. What is interesting is that these texts represent a variety of writing styles and genres. This really helps broaden the model with a large spectrum of English usage.  
+### Comparison of Work  
+**Data Structures: defaultdict vs. Counter**  
+- 'defaultdict(int)':  
+  * In my application I chose Python's 'defaultdict(int)' from the _collections_ module to store trigram counts. This had an advantage in automatically initialising a new key with a value of 0, which simplifies the logic by eliminating the need to check whether a trigram exists in the dictionary before updating its count.  
+  * **Comparison** This choice leads to cleaner and more efficient code particullary when handling large datasets.   
+- 'Counter' from the 'collections_ module':  
+  * An alternative would of been to use Python's 'Counter' which is also opimised for counting and could provide useful methods like 'most_common()'. However, using 'Counter' wouod require manual checks for uninitialized keys, making it less efiecient in this context.
+  * **Conclusion**: While both are suitable. I chose 'defaultdict(int)' for its simplicity and performance in this task.
 
 ### Justification for Approach 
 **Data Cleaning**  
@@ -52,11 +61,11 @@ By processing five diverse texts from Project Gutenberg, each which were cleaned
 
 ### Development
 **Data Cleaning**
-* _clean_text()_ : This function removes unwanted characters (e.g., punctuation, special characters) and converts the text to uppercase. It also replaces multiple spaces with a single space to avoid artificially inflating trigram counts.  
+* 'clean_text()' : This function removes unwanted characters (e.g., punctuation, special characters) and converts the text to uppercase. It also replaces multiple spaces with a single space to avoid artificially inflating trigram counts.  
 **Building the Trigram Model**
-* _build_trigram_model()_ : This function iterates through the cleaned text and extracts three-character sequences (trigrams). Each trigram is stored in a defaultdict(int), and its count is incremented each time it is encountered.  
+* 'build_trigram_model()' : This function iterates through the cleaned text and extracts three-character sequences (trigrams). Each trigram is stored in a 'defaultdict(int)', and its count is incremented each time it is encountered.  
 **Combining texts fro Project Gutenberg**
-* _process_multiple_files()_ : This function processes multiple texts, applying the _clean_text()_ function to clean each file, and then using _build_trigram_model()_ to generate a trigram model for each text. The trigram counts from each file are combined into a single dictionary, resulting in a comprehensive model.  
+* 'process_multiple_files()' : This function processes multiple texts, applying the 'clean_text()' function to clean each file, and then using 'build_trigram_model()' to generate a trigram model for each text. The trigram counts from each file are combined into a single dictionary, resulting in a comprehensive model.  
 
 ### Results
 The trigram was succesfully built after processing the five texts from Project Gutemberg. This is an example of the most frequent trigrams in the combined model:
