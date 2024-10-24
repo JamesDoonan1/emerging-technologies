@@ -4,7 +4,7 @@
 - [Overview](#overview)
 - [Task 1: Trigram Model](#task-1-trigram-model)
   - [Research](#task-1-research)
-  - [Comparison of Work](#task-1-comparison of work)
+  - [Comparison of Work](#task-1-comparison-of-work)
   - [Justification for Approach](#task-1-justification)
   - [Development](#task-1-development)
   - [Results](#task-1-results)
@@ -44,28 +44,40 @@ Preproccessing is a very important step in most natural language processing (NLP
 In this task, We were instucted to select five works from **Project Gutenberg**. What is interesting is that these texts represent a variety of writing styles and genres. This really helps broaden the model with a large spectrum of English usage.  
 ### Comparison of Work  
 **Data Structures: defaultdict vs. Counter**  
-- 'defaultdict(int)':  
-  * In my application I chose Python's 'defaultdict(int)' from the _collections_ module to store trigram counts. This had an advantage in automatically initialising a new key with a value of 0, which simplifies the logic by eliminating the need to check whether a trigram exists in the dictionary before updating its count.  
+- `defaultdict(int)`:  
+  * In my application I chose Python's `defaultdict(int)` from the `collections` module to store trigram counts. This had an advantage in automatically initialising a new key with a value of 0, which simplifies the logic by eliminating the need to check whether a trigram exists in the dictionary before updating its count.  
   * **Comparison** This choice leads to cleaner and more efficient code particullary when handling large datasets.   
-- 'Counter' from the 'collections_ module':  
-  * An alternative would of been to use Python's 'Counter' which is also opimised for counting and could provide useful methods like 'most_common()'. However, using 'Counter' wouod require manual checks for uninitialized keys, making it less efiecient in this context.
-  * **Conclusion**: While both are suitable. I chose 'defaultdict(int)' for its simplicity and performance in this task.
-
+- `Counter` from the `collections_ module`:  
+  * An alternative would of been to use Python's `Counter` which is also opimised for counting and could provide useful methods like `most_common()`. However, using `Counter` wouod require manual checks for uninitialized keys, making it less efiecient in this context.
+  * **Conclusion**: While both are suitable. I chose `defaultdict(int)` for its simplicity and performance in this task.  
+**Text Preprocessing: Handling Special Characters and Case Sensitivity**  
+- **Removing Non-Alphabetic Characters**  
+  * In my approach. We had to remove all non-alphabetical characters except for spaces and full stops to focus soley on the structure of the English language. This decision would align with commin practices in NLP. Where irrelevant characters are removed to avoid distorting the model.   
+  * **Comparison**: Some models might include more punctuation or numbers to create a more detailed language model. However this can add _noise_, especially when qorking with classic literature from Project Gutenberg. Punctuation patterns might skew the trigram counts.   
+- **Punctuation**  
+  * All characters were converted to uppercase. This was to avoid upper and lowercases version of the letters s distinct entetities. This would avoid redundant trigrams such as the word _THE_ and _the_  
+  * **Comparison**  
+  Keeping everything case sensitive could potentially improve the model's understanding of sentences beginning versus other paets of the text. However, this would increase the complexity and size of the model without really improving the results for this task.  
+- **Choice of Texts from Project Gutenberg vs. Modern Texts**  
+  * **Project Gutenberg**  
+  * Using pieces of literatutre from Project Gutenberg rwally ffered a variety of styles. We were explicitly told to use this source but I think have such a variety f genres and writiting styles from here really help the model generalise better.  
+  * **Other Sources**  
+  * Using modern text corpora, such as **Brown Corpus** or **Wikipedia data**, could provide a more modern view on English language. However, Project Gutenberg's classic literature serves the purpose of this task very well and offers a broader view of English structure inmore formal and narrative writing.  
 ### Justification for Approach 
 **Data Cleaning**  
 I implemented a cleaning process that removed non-alphabetic characters (except for spaces and full stops) and stadardised all text to upercase. This is to ensure that the model focused only on relevant text elements. The main reason I converted all characters to upper case was to avoid treating "A" and "a" as different entities.   
 **Building the Trigram Model**  
-The trigram model was built by iterating through the sequences of three consecutive characters and counting the frequency of each trigram. In this task I used Python's 'defaultdict(int)' to store trigram counts. this allowed for automatically intiliase and update counts effieciently. This data structure reduces the need for manual key checks, resulting in cleaner and faster code execution. I implemented a cleaning process that removed non-alphabetic characters (except for spaces and full stops) and stadardised all text to upercase. This is to ensure that the model focused only on relevant text elements. The main reason I converted all characters to upper case was to avoid treating "A" and "a" as different entities.  
+The trigram model was built by iterating through the sequences of three consecutive characters and counting the frequency of each trigram. In this task I used Python's `defaultdict(int)` to store trigram counts. this allowed for automatically intiliase and update counts effieciently. This data structure reduces the need for manual key checks, resulting in cleaner and faster code execution. I implemented a cleaning process that removed non-alphabetic characters (except for spaces and full stops) and stadardised all text to upercase. This is to ensure that the model focused only on relevant text elements. The main reason I converted all characters to upper case was to avoid treating "A" and "a" as different entities.  
 **Combining Texts from Project Gutenberg**  
 By processing five diverse texts from Project Gutenberg, each which were cleaned and analzed seperatley, I could create a very robust trigram model. Their trigram counts were then combined into a single dictionary. This ensured the model reflected the variety of writing styles present in the English language.  
 
 ### Development
 **Data Cleaning**
-* 'clean_text()' : This function removes unwanted characters (e.g., punctuation, special characters) and converts the text to uppercase. It also replaces multiple spaces with a single space to avoid artificially inflating trigram counts.  
+* `clean_text()` : This function removes unwanted characters (e.g., punctuation, special characters) and converts the text to uppercase. It also replaces multiple spaces with a single space to avoid artificially inflating trigram counts.  
 **Building the Trigram Model**
-* 'build_trigram_model()' : This function iterates through the cleaned text and extracts three-character sequences (trigrams). Each trigram is stored in a 'defaultdict(int)', and its count is incremented each time it is encountered.  
+* `build_trigram_model()` : This function iterates through the cleaned text and extracts three-character sequences (trigrams). Each trigram is stored in a `defaultdict(int)`, and its count is incremented each time it is encountered.  
 **Combining texts fro Project Gutenberg**
-* 'process_multiple_files()' : This function processes multiple texts, applying the 'clean_text()' function to clean each file, and then using 'build_trigram_model()' to generate a trigram model for each text. The trigram counts from each file are combined into a single dictionary, resulting in a comprehensive model.  
+* `process_multiple_files()` : This function processes multiple texts, applying the `clean_text()` function to clean each file, and then using `build_trigram_model()` to generate a trigram model for each text. The trigram counts from each file are combined into a single dictionary, resulting in a comprehensive model.  
 
 ### Results
 The trigram was succesfully built after processing the five texts from Project Gutemberg. This is an example of the most frequent trigrams in the combined model:
