@@ -95,8 +95,45 @@ After sharing my results with ChatGPT. It was able to tell me some notable obser
 ---
 
 ## Task 2: Text Generation
-### Justification for Approach
-(Insert justification for Task 2 here...)
+### Research
+**N-gram Models for Text Generation**   
+In natural language processing(NLP), **n-gram models** are widely used for generating and predicting sequences o characters or words. The trigram used here is a specific type of n-gram model that considers sequences of three characters, where each new character is predicted based on the previous two.The concept of n-grams stems from **Markov chains**, where the probability of each state/character depends only on the previous states (the two predicting characters)   
+More advanced techniques like **Recurrent Neural Networks (RNNs),**Long Short-Term Memory (LSTM) networks, and **Transformers** are commonly used for state-of-the-art text generation. These methods allow for longer dependencies and a more nuanced understanding of language than n-gram models. However, for this task, the simplicity and efficiency of the trigram model make it an appropriate choice. 
+**Randomized Text Generation with Weighted Probabilities**  
+In this Task 2, the next character is selected based on the **weighted probabilities** of the trigrams starting with the last two characters in the sequence. This approach seems to be commonly used in **stochastic language models**, where randomness plays a role in generating more creative output, while still being guided by observed patterns in the data. 
+
+--- 
+### Comparison of Work
+
+#### **1. Alternative Approaches to Text Generation**  
+- **Bigrams**:
+  -  As looked at in lectures we know that bigrams predict the next character based only on the previous character. This is simpler and even faster than a trigram model. Bigrams lack sufficient context to generate meaningful text. Bigrams are good for simple text structures but fall short when it comes to maintaining proper word boundaries or even sentence structures.  
+  - **Comparison**: Comparing to trigrams, bigrams provide less linguistic context. In a bigram model, predicting the next letter for 'TH' would only consider the letter following 'H' , ignoring the context provided by 'T'. This would'nt produce a good result.   
+- **Higher-Order N-grams (4-grams, 5-grams)**:  
+  -  Higher order n-grams, such as **4-grams** or **5-grams** basically add more preceding characters. This would improve the coherence but would also require quite a bit more memory.
+  - **Comparison**:  While higher-order n-grams provide more context, they introduce computational overhead. Trigrams strike a nice balance between generating coherent text and maintaining computational efficiency.  
+- **Recurrent Neural Networks (RNNs)**:  
+  -  RNN's and even LSTM's are designed to handle sequences of data and can model longer dependencies. Unlike n-grams models, RNN's remember all previous input data in a sequence, allowing for better handling of complex linguistic patterns.
+  - **Comparisons**: RNN's and LSTM's are more powerful but far more complex and computationally expensive compared to trigrams. For this task using RNN's would be over doing it, where as trigrams provide simpler and sufficient approach.    
+- **Transformers**:  
+  - Transformer models such GPT(Generative Pre-trained Transformers), have changed the text generation game. They model dependencies between words or characters across entire sequences without the limitations of n-grams or RNN's.  
+  - **Comparisons**: Transformer models are state-of-the-art for tasks like tet generations but they are far more complex. For this task, the trigrams servers the purpose well.  
+#### **2. Data Structures for Efficient Processing**   
+- **`defaultdict(int)` vs. `Counter`**:  
+ - I used `defaultdict(int)` to store trigram counts. This simplifies the code by allowing automatic initialization of dictionary keys with a default value of 0.  
+ - **Comparisons**: An alternative would be using Counter from Python’s collections module, which could also efficiently count trigram occurrences. While Counter provides useful methods such as `most_common()`, `defaultdict(int)` was chosen for its simplicity and minimal setup.  
+
+#### **3. Probabilistic Text Generation**  
+- **Random.choices()**:
+ - The code uses `random.choices()` to select the next character based on the probabilities derived from trigram counts. This method allows weighted random selection, which reflects the underlying distribution of characters in the training data.  
+ - **Comparisons**: Other approaches to probabilistic text generation might include sampling without replacement or applying temperature scaling to adjust the randomness in the output.  
+
+--- 
+
+ 
+
+### Justification for Approach  
+
 
 ### Development
 (Insert development details for Task 2 here...)
