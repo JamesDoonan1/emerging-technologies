@@ -43,14 +43,15 @@ Preprocessing is a very important step in most natural language processing (NLP)
 **Project Gutenberg Texts**
 In this task, We were instructed to select five works from **Project Gutenberg**. What is interesting is that these texts represent a variety of writing styles and genres. This really helps broaden the model with a large spectrum of English usage.  
 ### Comparison of Work  
-**Data Structures: defaultdict vs. Counter**  
+**1. Data Structures: defaultdict vs. Counter**  
 - `defaultdict(int)`:  
   * In my application I chose Python's `defaultdict(int)` from the `collections` module to store trigram counts. This had an advantage in automatically initialising a new key with a value of 0, which simplifies the logic by eliminating the need to check whether a trigram exists in the dictionary before updating its count.  
   * **Comparison** This choice leads to cleaner and more efficient code particularly when handling large datasets.   
 - `Counter` from the `collections_ module`:  
   * An alternative would of been to use Python's `Counter` which is also optimised for counting and could provide useful methods like `most_common()`. However, using `Counter` would require manual checks for uninitialized keys, making it less efficient in this context.
   * **Conclusion**: While both are suitable. I chose `defaultdict(int)` for its simplicity and performance in this task.  
-**Text Preprocessing: Handling Special Characters and Case Sensitivity**  
+
+**2. Text Preprocessing: Handling Special Characters and Case Sensitivity**  
 - **Removing Non-Alphabetic Characters**  
   * In my approach. We had to remove all non-alphabetical characters except for spaces and full stops to focus solely on the structure of the English language. This decision would align with common practices in NLP. Where irrelevant characters are removed to avoid distorting the model.   
   * **Comparison**: Some models might include more punctuation or numbers to create a more detailed language model. However this can add _noise_, especially when working with classic literature from Project Gutenberg. Punctuation patterns might skew the trigram counts.   
@@ -58,10 +59,11 @@ In this task, We were instructed to select five works from **Project Gutenberg**
   * All characters were converted to uppercase. This was to avoid upper and lowercases version of the letters s distinct entities. This would avoid redundant trigrams such as the word _THE_ and _the_  
   * **Comparison**  
   Keeping everything case sensitive could potentially improve the model's understanding of sentences beginning versus other parts of the text. However, this would increase the complexity and size of the model without really improving the results for this task.  
-- **Choice of Texts from Project Gutenberg vs. Modern Texts**  
-  **Project Gutenberg**  
+
+**3.Choice of Texts from Project Gutenberg vs. Modern Texts**  
+**Project Gutenberg**  
   * Using pieces of literature from Project Gutenberg really offered a variety of styles. We were explicitly told to use this source but I think have such a variety f genres and writing styles from here really help the model generalise better.  
-  **Other Sources**  
+**Other Sources**  
   * Using modern text corpora, such as **Brown Corpus** or **Wikipedia data**, could provide a more modern view on English language. However, Project Gutenberg's classic literature serves the purpose of this task very well and offers a broader view of English structure in more formal and narrative writing.  
 ### Justification for Approach 
 **Data Cleaning**  
