@@ -37,39 +37,39 @@ This project submission includes four tasks and a final project (ELIZA chatbot) 
 ## Task 1: Trigram Model
 ### Research
 **N-gram Models and Trigrams**  
-The trigram model used in Task 1 belongs to the broader class of **n-gram models**. Trigrams specifacally focuse on **sequence of three characters**. This allows the model to capture the structure of the English language much more efficiently than unigrams and bigrams which were looked at in lectures. The work of **Claude Shannon** was very important when it came to researching for this task. Shannon pioneered the study of probabilitic models in text generationinhis 1948 paper _A Mathematical Theory of Communication_. Trigrams, as a third-order Markov model, provide enough context for decent text generation without over complexity.   
+The trigram model used in Task 1 belongs to the broader class of **n-gram models**. Trigrams specifically focus on **sequence of three characters**. This allows the model to capture the structure of the English language much more efficiently than unigrams and bigrams which were looked at in lectures. The work of **Claude Shannon** was very important when it came to researching for this task. Shannon pioneered the study of probabilistic models in text generation in his 1948 paper _A Mathematical Theory of Communication_. Trigrams, as a third-order Markov model, provide enough context for decent text generation without over complexity.   
 **Text Preprocessing in NLP**  
-Preproccessing is a very important step in most natural language processing (NLP) tasks. It invlolves the processess of removing unwanted characters and standarising the format of the text to prevent irrelevant data from effecting the model. Some similar methods are used in NLP libraries like **NLTK** and **SpaCy**. These streamline tasks like removing punctuation and converting text to lowercase or uppercase.     
+Preprocessing is a very important step in most natural language processing (NLP) tasks. It involves the processes of removing unwanted characters and standardizing the format of the text to prevent irrelevant data from effecting the model. Some similar methods are used in NLP libraries like **NLTK** and **SpaCy**. These streamline tasks like removing punctuation and converting text to lowercase or uppercase.     
 **Project Gutenberg Texts**
-In this task, We were instucted to select five works from **Project Gutenberg**. What is interesting is that these texts represent a variety of writing styles and genres. This really helps broaden the model with a large spectrum of English usage.  
+In this task, We were instructed to select five works from **Project Gutenberg**. What is interesting is that these texts represent a variety of writing styles and genres. This really helps broaden the model with a large spectrum of English usage.  
 ### Comparison of Work  
 **Data Structures: defaultdict vs. Counter**  
 - `defaultdict(int)`:  
   * In my application I chose Python's `defaultdict(int)` from the `collections` module to store trigram counts. This had an advantage in automatically initialising a new key with a value of 0, which simplifies the logic by eliminating the need to check whether a trigram exists in the dictionary before updating its count.  
-  * **Comparison** This choice leads to cleaner and more efficient code particullary when handling large datasets.   
+  * **Comparison** This choice leads to cleaner and more efficient code particularly when handling large datasets.   
 - `Counter` from the `collections_ module`:  
-  * An alternative would of been to use Python's `Counter` which is also opimised for counting and could provide useful methods like `most_common()`. However, using `Counter` wouod require manual checks for uninitialized keys, making it less efiecient in this context.
+  * An alternative would of been to use Python's `Counter` which is also optimised for counting and could provide useful methods like `most_common()`. However, using `Counter` would require manual checks for uninitialized keys, making it less efficient in this context.
   * **Conclusion**: While both are suitable. I chose `defaultdict(int)` for its simplicity and performance in this task.  
 **Text Preprocessing: Handling Special Characters and Case Sensitivity**  
 - **Removing Non-Alphabetic Characters**  
-  * In my approach. We had to remove all non-alphabetical characters except for spaces and full stops to focus soley on the structure of the English language. This decision would align with commin practices in NLP. Where irrelevant characters are removed to avoid distorting the model.   
-  * **Comparison**: Some models might include more punctuation or numbers to create a more detailed language model. However this can add _noise_, especially when qorking with classic literature from Project Gutenberg. Punctuation patterns might skew the trigram counts.   
+  * In my approach. We had to remove all non-alphabetical characters except for spaces and full stops to focus solely on the structure of the English language. This decision would align with common practices in NLP. Where irrelevant characters are removed to avoid distorting the model.   
+  * **Comparison**: Some models might include more punctuation or numbers to create a more detailed language model. However this can add _noise_, especially when working with classic literature from Project Gutenberg. Punctuation patterns might skew the trigram counts.   
 - **Punctuation**  
-  * All characters were converted to uppercase. This was to avoid upper and lowercases version of the letters s distinct entetities. This would avoid redundant trigrams such as the word _THE_ and _the_  
+  * All characters were converted to uppercase. This was to avoid upper and lowercases version of the letters s distinct entities. This would avoid redundant trigrams such as the word _THE_ and _the_  
   * **Comparison**  
-  Keeping everything case sensitive could potentially improve the model's understanding of sentences beginning versus other paets of the text. However, this would increase the complexity and size of the model without really improving the results for this task.  
+  Keeping everything case sensitive could potentially improve the model's understanding of sentences beginning versus other parts of the text. However, this would increase the complexity and size of the model without really improving the results for this task.  
 - **Choice of Texts from Project Gutenberg vs. Modern Texts**  
-  * **Project Gutenberg**  
-  * Using pieces of literatutre from Project Gutenberg rwally ffered a variety of styles. We were explicitly told to use this source but I think have such a variety f genres and writiting styles from here really help the model generalise better.  
-  * **Other Sources**  
-  * Using modern text corpora, such as **Brown Corpus** or **Wikipedia data**, could provide a more modern view on English language. However, Project Gutenberg's classic literature serves the purpose of this task very well and offers a broader view of English structure inmore formal and narrative writing.  
+  **Project Gutenberg**  
+  * Using pieces of literature from Project Gutenberg really offered a variety of styles. We were explicitly told to use this source but I think have such a variety f genres and writing styles from here really help the model generalise better.  
+  **Other Sources**  
+  * Using modern text corpora, such as **Brown Corpus** or **Wikipedia data**, could provide a more modern view on English language. However, Project Gutenberg's classic literature serves the purpose of this task very well and offers a broader view of English structure in more formal and narrative writing.  
 ### Justification for Approach 
 **Data Cleaning**  
-I implemented a cleaning process that removed non-alphabetic characters (except for spaces and full stops) and stadardised all text to upercase. This is to ensure that the model focused only on relevant text elements. The main reason I converted all characters to upper case was to avoid treating "A" and "a" as different entities.   
+I implemented a cleaning process that removed non-alphabetic characters (except for spaces and full stops) and standardised all text to uppercase. This is to ensure that the model focused only on relevant text elements. The main reason I converted all characters to upper case was to avoid treating "A" and "a" as different entities.   
 **Building the Trigram Model**  
-The trigram model was built by iterating through the sequences of three consecutive characters and counting the frequency of each trigram. In this task I used Python's `defaultdict(int)` to store trigram counts. this allowed for automatically intiliase and update counts effieciently. This data structure reduces the need for manual key checks, resulting in cleaner and faster code execution. I implemented a cleaning process that removed non-alphabetic characters (except for spaces and full stops) and stadardised all text to upercase. This is to ensure that the model focused only on relevant text elements. The main reason I converted all characters to upper case was to avoid treating "A" and "a" as different entities.  
+The trigram model was built by iterating through the sequences of three consecutive characters and counting the frequency of each trigram. In this task I used Python's `defaultdict(int)` to store trigram counts. this allowed for automatically initialize and update counts efficiently. This data structure reduces the need for manual key checks, resulting in cleaner and faster code execution. I implemented a cleaning process that removed non-alphabetic characters (except for spaces and full stops) and standardised all text to uppercase. This is to ensure that the model focused only on relevant text elements. The main reason I converted all characters to upper case was to avoid treating "A" and "a" as different entities.  
 **Combining Texts from Project Gutenberg**  
-By processing five diverse texts from Project Gutenberg, each which were cleaned and analzed seperatley, I could create a very robust trigram model. Their trigram counts were then combined into a single dictionary. This ensured the model reflected the variety of writing styles present in the English language.  
+By processing five diverse texts from Project Gutenberg, each which were cleaned and analyzed separately, I could create a very robust trigram model. Their trigram counts were then combined into a single dictionary. This ensured the model reflected the variety of writing styles present in the English language.  
 
 ### Development
 **Data Cleaning**
@@ -80,11 +80,11 @@ By processing five diverse texts from Project Gutenberg, each which were cleaned
 * `process_multiple_files()` : This function processes multiple texts, applying the `clean_text()` function to clean each file, and then using `build_trigram_model()` to generate a trigram model for each text. The trigram counts from each file are combined into a single dictionary, resulting in a comprehensive model.  
 
 ### Results
-The trigram was succesfully built after processing the five texts from Project Gutemberg. This is an example of the most frequent trigrams in the combined model:
+The trigram was successfully built after processing the five texts from Project Gutenberg. This is an example of the most frequent trigrams in the combined model:
 
 {' LE': 2789, 'LET': 1288, 'ETT': 997, 'TTE': 2141, 'TER': 7254, 'ER ': 17193, 'R T': 4524, ' TO': 16087, 'TO ': 14617, 'O M': 1842, ' MR': 1372, 'MRS': 374, 'RS.': 716, 'S. ': 3141, '. S': 1466, ' SA': 3993, 'SAV': 180, 'AVI': 512, 'VIL': 479, 'ILL': 3706, 'LLE': 1195}  
 
-After sharing my results with ChatGPT. It was able to tell me some notible observations. 
+After sharing my results with ChatGPT. It was able to tell me some notable observations. 
 * ' TO' appears frequently (16,087 occurrences), reflecting its common usage in English as part of prepositional phrases and infinitive verbs.
 * 'THE' appears 55,432 times, which is unsurprising, as "the" is the most common word in English.
 * Personal titles like ' MR', 'MRS', and common pronouns like 'YOU' are also frequently observed.
