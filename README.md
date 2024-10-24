@@ -181,4 +181,9 @@ After sharing my results with ChatGPT. It was able to tell me some notable obser
 
 6. **SpaCy Documentation**. (n.d.). *SpaCy: Industrial-strength Natural Language Processing*.  
    - Although external libraries were not used, SpaCy's text processing techniques provide inspiration for how to structure and clean data in NLP tasks.  
-   - Available at: [https://spacy.io](https://spacy.io)
+   - Available at: [https://spacy.io](https://spacy.io)  
+
+7. **ChatGPT by OpenAI**. (2024). *Assistance with Task 1 and project guidance*.  
+   - ChatGPT was used for help in understanding the task requirements, providing guidance on the development process, and assisting with the structure of the README file.  
+   - Available at: [https://openai.com/chatgpt](https://openai.com/chatgpt)
+
