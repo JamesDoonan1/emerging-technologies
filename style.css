@@ -85,7 +85,7 @@ header p {
 }
 
 /* Input Area Styling */
-#input-area {
+#chat-input {
     display: flex;
     padding: 15px;
     background-color: #162447;
