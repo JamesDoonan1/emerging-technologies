@@ -9,6 +9,8 @@
   - [Development](#task-1-development)
   - [Results](#task-1-results)
 - [Task 2: Text Generation](#task-2-text-generation)
+  - [Research](#task-2-research)
+  - [Comparison of Work](#task-2-comparison-of-work)
   - [Justification for Approach](#task-2-justification)
   - [Development](#task-2-development)
   - [Results](#task-2-results)
