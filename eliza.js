@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "are": "am"
     };
 
+    function reflect(word) {
+        return reflections[word.toLowerCase()] || word;
+    }
+    
+
     // Function to replace pronouns in the user's message - Generated using CoPilot
     const patterns = [
 
@@ -37,13 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
         // --- Identity or Purpose Questions ---
         { pattern: /who are you|what are you/i, response: ["I'm ELIZA, a virtual therapist. How can I support you today?", "I'm here to listen and help you talk through things."] },
         { pattern: /what do you do/i, response: ["I’m here to listen and have conversations to help you explore your thoughts."] },
-    
+        { pattern: /are you a real person/i, response: ["I'm a virtual assistant created to help you talk through your thoughts.", "I'm here to provide a space for conversation, even though I'm not a human."] },
+        { pattern: /tell me about yourself/i, response: ["I’m ELIZA, a program designed to engage in meaningful conversation.", "I'm here to help you explore your thoughts and feelings."] },
+
         // --- Farewell Responses ---
         { pattern: /goodbye|bye|see you/i, response: ["Goodbye! Take care.", "Thank you for sharing. Goodbye!", "Bye! I’m here if you need to talk again."] },
     
         // --- Advice or Guidance Requests ---
         { pattern: /what should I do/i, response: ["Sometimes talking things through helps. What’s on your mind?", "What do you feel would help you most?", "Have you considered what outcome you'd like to see?"] },
-    
+        { pattern: /I need advice/i, response: ["I’m here to listen. What would you like advice on?", "What kind of advice are you looking for?"] },
+
+        // --- Appreciation Responses ---
+        { pattern: /i think you\'?re (helpful|great|nice)/i, response: ["Thank you! I'm glad to be helpful.", "I appreciate your kind words. How else can I assist you?"] },
+
         // --- General Existing Patterns ---
         { pattern: /I need (.*)/i, response: ["Why do you need $1?", "Would it really help you to get $1?", "Are you sure you need $1?"] },
         { pattern: /Why don\'?t you ([^\?]*)\??/i, response: ["Do you really think I don't $1?", "Perhaps eventually I will $1.", "Do you want me to $1?"] },
