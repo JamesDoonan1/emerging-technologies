@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // --- Greeting Patterns ---
         { pattern: /hello|hi|hey/i, response: ["Hello! How are you feeling today?", "Hi there! What’s on your mind?", "Hey! How can I help you?"] },
         { pattern: /good (morning|afternoon|evening)/i, response: ["Good $1! How can I assist you today?", "Good $1! What’s on your mind?", "Hello! I hope you're having a pleasant $1."] },
-    
+
         // --- Emotion-based Responses ---
         { pattern: /I feel (happy|excited|joyful)/i, response: ["I'm glad to hear that you're feeling $1! What made you feel this way?", "It’s wonderful to feel $1! Would you like to talk more about it?"] },
         { pattern: /I feel (sad|down|upset|frustrated|angry)/i, response: ["I'm sorry you're feeling $1. Would you like to discuss what’s causing it?", "Feeling $1 can be tough. Do you want to share more?"] },
-    
+
         // --- Identity or Purpose Questions ---
         { pattern: /who are you|what are you/i, response: ["I'm ELIZA, a virtual therapist. How can I support you today?", "I'm here to listen and help you talk through things."] },
         { pattern: /what do you do/i, response: ["I’m here to listen and have conversations to help you explore your thoughts."] },
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // --- Farewell Responses ---
         { pattern: /goodbye|bye|see you/i, response: ["Goodbye! Take care.", "Thank you for sharing. Goodbye!", "Bye! I’m here if you need to talk again."] },
-    
+
         // --- Advice or Guidance Requests ---
         { pattern: /what should I do/i, response: ["Sometimes talking things through helps. What’s on your mind?", "What do you feel would help you most?", "Have you considered what outcome you'd like to see?"] },
         { pattern: /I need advice/i, response: ["I’m here to listen. What would you like advice on?", "What kind of advice are you looking for?"] },
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { pattern: /quit/i, response: ["Thank you for talking with me.", "Goodbye. It was nice talking to you.", "Have a great day!"] },
         { pattern: /(.*)/i, response: ["Please tell me more.", "Let's change focus a bit... Tell me about your family.", "Can you elaborate on that?"] }
     ];
-    
+
 
     // Function to get a random response from the array of responses
     function getRandomResponse(responses) {
@@ -132,7 +132,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Event listener for the Send button
-    sendBtn.addEventListener("click", function () {
+    sendBtn.addEventListener("click", sendMessage);
+
+    // Event listener for the Enter key in the input field
+    userInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    // Function to send the message
+    function sendMessage() {
         const userMessage = userInput.value.trim();
         if (userMessage) {
             appendMessage("user", userMessage);  // Show user's message
@@ -140,7 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
             appendMessage("bot", botReply);  // Show ELIZA's message
             userInput.value = "";  // Clear the input field
         }
-    });
+    }
+
 
 
 });
