@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to replace pronouns in the user's message - Generated using CoPilot
     const patterns = [
+        // --- Gratitude Responses ---
+        { pattern: /i think you\'?re (helpful|great|nice|amazing|good|wonderful|awesome)/i, response: ["Thank you! I'm glad to be helpful.", "I appreciate your kind words. How else can I assist you?"] },
+        { pattern: /thank you/i, response: ["You're welcome! I'm here to help.", "No problem! How can I support you further?"] },
+        { pattern: /thanks/i, response: ["You're welcome! I'm here to help.", "No problem! How can I support you further?"] },
 
         // --- Greeting Patterns ---
         { pattern: /hello|hi|hey/i, response: ["Hello! How are you feeling today?", "Hi there! What’s on your mind?", "Hey! How can I help you?"] },
@@ -54,9 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // --- Advice or Guidance Requests ---
         { pattern: /what should I do/i, response: ["Sometimes talking things through helps. What’s on your mind?", "What do you feel would help you most?", "Have you considered what outcome you'd like to see?"] },
         { pattern: /I need advice/i, response: ["I’m here to listen. What would you like advice on?", "What kind of advice are you looking for?"] },
-
-        // --- Gratitude Responses ---
-        { pattern: /i think you\'?re (helpful|great|nice|amazing|good)/i, response: ["Thank you! I'm glad to be helpful.", "I appreciate your kind words. How else can I assist you?"] },
 
         // General Existing Patterns
         { pattern: /I need (.*)/i, response: ["Why do you need $1?", "Would it really help you to get $1?", "Are you sure you need $1?"] },
