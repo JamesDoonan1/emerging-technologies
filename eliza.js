@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function reflect(word) {
         return reflections[word.toLowerCase()] || word;
     }
-    
+
+    function processReflections(text) {
+        return text.split(" ").map(reflect).join(" ");
+    }
 
     // Function to replace pronouns in the user's message - Generated using CoPilot
     const patterns = [
@@ -55,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // --- Appreciation Responses ---
         { pattern: /i think you\'?re (helpful|great|nice)/i, response: ["Thank you! I'm glad to be helpful.", "I appreciate your kind words. How else can I assist you?"] },
 
-        // --- General Existing Patterns ---
+        // General Existing Patterns
         { pattern: /I need (.*)/i, response: ["Why do you need $1?", "Would it really help you to get $1?", "Are you sure you need $1?"] },
         { pattern: /Why don\'?t you ([^\?]*)\??/i, response: ["Do you really think I don't $1?", "Perhaps eventually I will $1.", "Do you want me to $1?"] },
         { pattern: /Why can\'?t I ([^\?]*)\??/i, response: ["Do you think you should be able to $1?", "If you could $1, what would you do?", "I don't know -- why can't you $1?"] },
@@ -105,9 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const match = message.match(pattern.pattern);
             if (match) {
                 const response = getRandomResponse(pattern.response);
-                return response.replace(/\$(\d+)/g, function (_, index) {
-                    return reflect(match[index]) || match[index];
-                });
+                return response.replace(/\$(\d+)/g, (_, index) => processReflections(match[index]) || match[index]);
             }
         }
         // Default response if no patterns match
