@@ -25,6 +25,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to replace pronouns in the user's message - Generated using CoPilot
     const patterns = [
+
+        // --- Greeting Patterns ---
+        { pattern: /hello|hi|hey/i, response: ["Hello! How are you feeling today?", "Hi there! What’s on your mind?", "Hey! How can I help you?"] },
+        { pattern: /good (morning|afternoon|evening)/i, response: ["Good $1! How can I assist you today?", "Good $1! What’s on your mind?", "Hello! I hope you're having a pleasant $1."] },
+    
+        // --- Emotion-based Responses ---
+        { pattern: /I feel (happy|excited|joyful)/i, response: ["I'm glad to hear that you're feeling $1! What made you feel this way?", "It’s wonderful to feel $1! Would you like to talk more about it?"] },
+        { pattern: /I feel (sad|down|upset|frustrated|angry)/i, response: ["I'm sorry you're feeling $1. Would you like to discuss what’s causing it?", "Feeling $1 can be tough. Do you want to share more?"] },
+    
+        // --- Identity or Purpose Questions ---
+        { pattern: /who are you|what are you/i, response: ["I'm ELIZA, a virtual therapist. How can I support you today?", "I'm here to listen and help you talk through things."] },
+        { pattern: /what do you do/i, response: ["I’m here to listen and have conversations to help you explore your thoughts."] },
+    
+        // --- Farewell Responses ---
+        { pattern: /goodbye|bye|see you/i, response: ["Goodbye! Take care.", "Thank you for sharing. Goodbye!", "Bye! I’m here if you need to talk again."] },
+    
+        // --- Advice or Guidance Requests ---
+        { pattern: /what should I do/i, response: ["Sometimes talking things through helps. What’s on your mind?", "What do you feel would help you most?", "Have you considered what outcome you'd like to see?"] },
+    
+        // --- General Existing Patterns ---
         { pattern: /I need (.*)/i, response: ["Why do you need $1?", "Would it really help you to get $1?", "Are you sure you need $1?"] },
         { pattern: /Why don\'?t you ([^\?]*)\??/i, response: ["Do you really think I don't $1?", "Perhaps eventually I will $1.", "Do you want me to $1?"] },
         { pattern: /Why can\'?t I ([^\?]*)\??/i, response: ["Do you think you should be able to $1?", "If you could $1, what would you do?", "I don't know -- why can't you $1?"] },
@@ -36,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { pattern: /How (.*)/i, response: ["How do you suppose?", "Perhaps you can answer your own question.", "What is it you're really asking?"] },
         { pattern: /Because (.*)/i, response: ["Is that the real reason?", "What other reasons come to mind?", "Does that reason seem to explain anything else?"] },
         { pattern: /(.*) sorry (.*)/i, response: ["There are many times when no apology is needed.", "What feelings do you have when you apologize?", "Don't be sorry."] },
-        { pattern: /Hello(.*)/i, response: ["Hello... I'm glad you could drop by today.", "Hi there... how are you today?", "Hello, how are you feeling today?"] },
         { pattern: /I think (.*)/i, response: ["Do you doubt $1?", "Do you really think so?", "But you're not sure $1?"] },
         { pattern: /Friend (.*)/i, response: ["Tell me more about your friends.", "When you think of a friend, what comes to mind?", "Why don't you tell me about a childhood friend?"] },
         { pattern: /Yes/i, response: ["You seem quite sure.", "OK, but can you elaborate a bit?", "Why do you say yes?"] },
@@ -62,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { pattern: /quit/i, response: ["Thank you for talking with me.", "Goodbye. It was nice talking to you.", "Have a great day!"] },
         { pattern: /(.*)/i, response: ["Please tell me more.", "Let's change focus a bit... Tell me about your family.", "Can you elaborate on that?"] }
     ];
+    
 
     // Function to get a random response from the array of responses
     function getRandomResponse(responses) {
