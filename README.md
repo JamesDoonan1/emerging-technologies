@@ -222,13 +222,12 @@ Exporting the trigram model to a JSON file serves multiple purposes:
 - **Human-Readable Format**: JSON’s structured format, combined with indentation, ensures that the exported model is human-readable. This allows for easier inspection and debugging of the trigram data.
   
 
-### Development
-# Specify the name of the output file where the trigram model will be saved
+### Development  
+- Specify the name of the output file where the trigram model will be saved
 output_file = 'trigrams.json'
-# Call the function to export the trigram model to a JSON file
+- Call the function to export the trigram model to a JSON file
 export_trigram_model(combined_trigram_model, output_file)
-
-# Print the results
+- Print the results
 print(f"Trigram model has been exported to {output_file}")  
 
 ### Results
