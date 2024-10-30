@@ -27,9 +27,11 @@
   - [Development](#eliza-development)
   - [Deployment](#eliza-deployment)
   - [Results](#eliza-results)
+  - [Manual Testing Results](#manual-testing-results)
 - [Testing](#testing)
 - [Final Thoughts and Challenges](#final-thoughts-and-challenges)
 - [References](#references)
+
 
 ## Overview
 This project submission includes four tasks and a final project (ELIZA chatbot) that demonstrate the application of trigram models, text generation, model analysis, JSON exports, and chatbot implementation. The tasks are structured to showcase research, development, and thoughtful coding practices.
