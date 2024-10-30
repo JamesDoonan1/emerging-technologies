@@ -3,31 +3,31 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Task 1: Trigram Model](#task-1-trigram-model)
-  - [Research](#task-1-research)
-  - [Comparison of Work](#task-1-comparison-of-work)
-  - [Justification for Approach](#task-1-justification)
-  - [Development](#task-1-development)
-  - [Results](#task-1-results)
+  - [Research]
+  - [Comparison of Work]
+  - [Justification for Approach]
+  - [Development]
+  - [Results]
 - [Task 2: Text Generation](#task-2-text-generation)
-  - [Research](#task-2-research)
-  - [Comparison of Work](#task-2-comparison-of-work)
-  - [Justification for Approach](#task-2-justification)
-  - [Development](#task-2-development)
-  - [Results](#task-2-results)
+  - [Research]
+  - [Comparison of Work]
+  - [Justification for Approach]
+  - [Development]
+  - [Results]
 - [Task 3: Model Analysis](#task-3-model-analysis)
-  - [Justification for Approach](#task-3-justification)
-  - [Development](#task-3-development)
-  - [Results](#task-3-results)
+  - [Justification for Approach]
+  - [Development]
+  - [Results]
 - [Task 4: Export Model to JSON](#task-4-export-model-to-json)
-  - [Justification for Approach](#task-4-justification)
-  - [Development](#task-4-development)
-  - [Results](#task-4-results)
+  - [Justification for Approach]
+  - [Development]
+  - [Results]
 - [ELIZA Chatbot Project](#eliza-chatbot-project)
-  - [Research](#eliza-research)
-  - [Development](#eliza-development)
-  - [Deployment](#eliza-deployment)
-  - [Results](#eliza-results)
-  - [Manual Testing Results](#manual-testing-results)
+  - [Research]
+  - [Development]
+  - [Deployment]
+  - [Results]
+  - [Manual Testing Results]
 - [Testing](#testing)
 - [Final Thoughts and Challenges](#final-thoughts-and-challenges)
 - [References](#references)
