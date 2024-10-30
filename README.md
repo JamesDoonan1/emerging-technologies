@@ -135,12 +135,43 @@ Although the trigram model was specified in the task, several key decisions were
 By implementing these strategies, the model adheres to the task requirements while ensuring that the code is efficient, readable, and flexible. Each decision was made to streamline the process while maintaining clarity and structure, leading to better organization of both the code and the output.
 
 
-### Development
-(Insert development details for Task 2 here...)
+### Development  
+In Task 2, I implemented a text generation model based on a trigram approach. The key functions developed are as follows:  
+1. **`print_trigram_possibilities(trigram_model, last_two)`**: This function prints the possible next characters for a given pair of characters (last two) based on the trigram model. It calculates the probabilities for each possible next character and displays the results.
+   - **Parameters**:
+     - `trigram_model`: A dictionary containing the trigram counts.
+     - `last_two`: A string representing the last two characters to check against the trigram model.
+
+2. **`generate_text(trigram_model, length=10000, line_length=80)`**: This function generates a string of a specified length using the trigram model.
+   - **Parameters**:
+     - `trigram_model`: A dictionary containing the trigram counts.
+     - `length`: The total number of characters to generate (default is 10,000).
+     - `line_length`: The length of each line in the formatted output (default is 80).
+   - The function initializes the generated text with the string "TH" and iteratively appends new characters based on the probabilities derived from the trigram model. It also formats the output by inserting line breaks at specified lengths.  
+
 
 ### Results
-(Insert the output or explanation of results for Task 2 here...)
+The text generation process successfully produced coherent text that follows the structure of the input corpus. The first 500 characters of the generated text shows the model's ability to generate sequences that resemble the original text.  
 
+`Generated text (first 500 characters):
+THAT BELIS INGEONG HIS LIZABBITHER DAS ALS I HIMPLY HERY BEIVE FORY FAMORESS AHA
+T TH THE MOTHO PREE ITHIRCYSENTIMMOVER COGYME MAGIVOYOULET WHE MOVEREBETRAT GRAC
+E HEIREPER PRYTHE HAREACCOMPAR DENJOIS OF AT IF THAVERS. MED SOR APARY SAYS ANDO
+E PROURMIS RECLAT SY HE PEENEIVIDECKEWAN. HUSIDEERED NOT GIBROW TAUNG HALL WAS S
+AINT OUSEVESHAVAND THAT ANTS ROCKE KING WED AS ANI SO MANDSONED AT JULAY OCIMP B
+ITS NOT TIALLY IND ROM NO SM THERES. HE SHE MOGNEXED THATILLPALL AGO. DEEBOURE O
+F HIP AN TO EL` 
+
+Also, when querying for possible next characters following **TH**, the outut shows the character probabilities based on their occurrences in the trigram model:  
+
+`Possible next characters after 'TH':
+TH : appeared 7714 times, probability = 0.1080
+THA: appeared 8516 times, probability = 0.1192
+THE: appeared 42957 times, probability = 0.6013
+...
+Total occurrences: 71444`
+
+These results all show that the model does capture the patterns in the training data, providing meaningful text generation and accurate probability assessments for character transitions.  
 ---
 
 ## Task 3: Model Analysis
