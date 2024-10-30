@@ -7,7 +7,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function appendMessage(sender, text) {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add("message", sender);
+
+        // add a timestamp to the message
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
+        const minutes = currentTime.getMinutes().toString().padStart(2, "0");
+        const ampm = hours >= 12 ? "PM" : "AM";
+        const timestamp = `${hours % 12 || 12}:${minutes} ${ampm}`;
+
+        // Create timestamp span
+        const timestampSpan = document.createElement("span");
+        timestampSpan.classList.add("timestamp");
+        timestampSpan.textContent = timestamp;
+
+        // Append timestamp and message text
         messageDiv.textContent = text;
+        messageDiv.appendChild(timestampSpan); // Add timestamp next to the message text
         chatArea.appendChild(messageDiv);
         chatArea.scrollTop = chatArea.scrollHeight; // Auto-scroll to the latest message
     }
