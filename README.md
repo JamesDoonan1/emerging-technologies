@@ -187,30 +187,71 @@ By implementing these strategies, the model adheres to the task requirements whi
 
 ---
 
-## ELIZA Chatbot Project
-### Research
-(Insert research for ELIZA chatbot here...)
+## ELIZA Chatbot Project  
+The **ELIZA** chatbot is a simulated conversational program. It was inspired by early natural language processing techniques. It mimics a **Rogerian psychotherapist**, responding to user input with predefined patterns and reflections. This chatbot is designed to recognise keywords, reflect user inputs and create engaging conversation.  
 
-### Development
-(Insert development details for ELIZA chatbot here...)
+### Research  
+**ELIZA and Early NLP**  
+ELIZA is one of the earliest chatbot's and was created by `Joseph Weizenbaum` in the 1960's. In the original version of ELIZA, pattern matching was used and substitution to simulate conversation, particularly in a therapeutic setting. It used a list of pre-set responses that could be triggered by keywords and phrases in user inputs. This created an illusion of understanding without true semantic comprehension.  
+**Natural Language Processing Patterns**  
+As seen before, ELIZA uses regular expressions to identify user inputs based on **keywords** and **patterns**. This technique allows the chatbot to recognise certain types of statements(such as expressions, greetings or feelings) and generate appropriate responses. As looked at before NLP libraries such as **SPaCy** and **NLTK** utilise similar rule-based techniques for text processing and initial conversation analysis.   
 
-### Deployment
-(Explain how the chatbot was deployed using GitHub Pages and include the link.)
+### Development  
+The ELIZA chatbot was built using **HTML**, **CSS** and **JavaScript**. This ensure that is operated entirely client-side with no dependencies on external libraries or APIs.  
+1. **Pattern Matching and Reflections**  
+- **Patterns**: Predefined patterns using regular expressions allow the chatbot to respond in the correct manner using user inputs based on keywords and context.  
+- **Reflections**:The chatbot utilises a **reflection** dictionary to swap pronouns in the user's input ( e.g., "I" to "you", "my" to "your"). This allows the chatbot to create responses that feel for normal and personalised.   
+2. **Event Handling**  
+- The chatbot is set to respond when either the Send button is clicked or when the Enter key is pressed. This improves user experience.  
+- Input sanatisation and empty handling ensures that only valid inputs trigger responses. This will avoid empty messages in the chat window.  
+3. **Automatic Line Wrapping and Responsive Design**  
+- CSS was applied to handle automatic line wrapping. Tis ensures that longer messages stay within the chat bubble boundaries.  
+4. **Timestamps**  
+- Each message includes a timestamp for a more realistic conversation flow. The timestamp enhances the feel of a live conversation and can add context to a longer chat session.  
+5. **Handling Edge Cases**  
+- The chatbot included responses for nonsensical inputs. This includes special characters and repeated inputs.  
 
-### Results
-(Insert results for ELIZA chatbot here...)
+
+### Deployment  
+The ELIZA chatbot is deployed by accessing the code on the repository and running it locally by downloading it. The implementation relies solely on HTML, CSS, and JavaScript, making it straightforward to deploy and use without any additional setup  
+
+### Results  
+The ELIZA chatbot successfully simulates a conversation with the user by:  
+- Responding correctly and accurately to various user inputs, including greetings, feelings and questions.  
+- Reflecting user statements to create an interactive and engaging experience.  
+- Handling edge cases such as nonsensical inputs and maintaining conversation flow over multiple entries.   
+
 
 ---
 
-## Testing
-- Document any testing done for each task and the ELIZA project.
-- Include any unit tests written and the results of those tests.
+## Manual Testing Results:  
+Extensive testing was conducted to ensure the functionality and responsiveness of ELIZA. Various inputs were tested, included normal conversational phrases, edge cases and nonsensical characters. The goal was to validate that the chatbot response appropriately in all scenarios.   
+**Input Tested**  
+- **Normal Phrases**: Common greetings, emotional expressions, and questions.  
+- **Edge Cases**: 
+  - Empty inputs  
+  - Inputs with only whitespace  
+  - Nonsensical phrases (e.g., random characters)  
+- **Method**: Manual testing conducted through the chatbot interface in the web browser.
+- **Environment**: Google Chrome browser on Windows.
 
----
+**Successful Response Summary**:  
+A summary of the successful responses from the chatbot during testing is as follows:  
 
-## Final Thoughts and Challenges
-- Discuss any challenges encountered during the project.
-- Explain how you overcame those challenges or refactored your code to improve it.
+### Successful Response Table
+| **User Input**               | **Expected Response**                                                        | **Actual Response**                                                       | **Result**        | **Notes**                          |
+|------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------|-------------------------------------|
+| hello                        | "Hello! How are you feeling today?"                                          | Hi there! What’s on your mind?                                          | ✅ Correct        | Pattern matches correctly.         |
+| Good morning                 | "Good morning! How can I assist you today?"                                 | Good morning! What’s on your mind?                                      | ✅ Correct        | Pattern matches correctly.         |
+| who are you?                 | "I'm ELIZA, a virtual therapist. How can I support you today?"              | I'm here to listen and help you talk through things.                    | ✅ Correct        | Matches "who are you" pattern.     |
+| ...                          | ...                                                                          | ...                                                                     | ...               | ...                                 |
+| asdjklf                     | "Please tell me more."                                                      | Please tell me more.                                                    | ✅ Correct        | Nonsensical input handled well.    |
+| !@#$%^&*                    | "Let's change focus a bit... Tell me about your family."                   | Let's change focus a bit... Tell me about your family.                  | ✅ Correct        | Nonsensical characters handled well. |
+
+### Summary of Results
+Overall, the testing of the ELIZA Chatbot demonstrated that the majority of inputs were processed correctly, with responses matching expectations. Edge cases were also handled effectively, ensuring a robust user experience. For further examining of tests please follow this link to GitHub issues where more tests were performed.   
+https://github.com/JamesDoonan1/emerging-technologies/issues/41  
+
 
 ---
 
@@ -242,5 +283,9 @@ By implementing these strategies, the model adheres to the task requirements whi
 
 7. **ChatGPT by OpenAI**. (2024). *Assistance with Task 1 and project guidance*.  
    - ChatGPT was used for help in understanding the task requirements, providing guidance on the development process, and assisting with the structure of the README file.  
-   - Available at: [https://openai.com/chatgpt](https://openai.com/chatgpt)
+   - Available at: [https://openai.com/chatgpt](https://openai.com/chatgpt)  
+8. **Weizenbaum, J**. (1966). ELIZA - A Computer Program For the Study of Natural Language Communication Between Man and Machine.
+
+    - This paper presents ELIZA, one of the earliest examples of natural language processing. It outlines the design and functionality of the program, which serves as the foundation for modern chatbot development.
+    - Available at: http://www.ams.org/journals/bull/1966-72-6/S0002-9904-1966-12727-7/S0002-9904-1966-12727-7.pdf
 
