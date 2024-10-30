@@ -212,15 +212,39 @@ This does highlight the limitations of a Trigram model. The model relies on sequ
 
 ---
 
-## Task 4: Export Model to JSON
+## Task 4: Export Model to JSON  
+
+The objective of Task 4 is to export the trigram model created in previous tasks into a JSON file. The task involves developing a function that takes the trigram model, which is structured as a **dictionary** containing trigram counts, and writes it to a specified JSON file  
 ### Justification for Approach
-(Insert justification for Task 4 here...)
+Exporting the trigram model to a JSON file serves multiple purposes:
+- **Data Persistence**: Saving the model allows for its reuse without needing to regenerate the trigrams each time the program is run. This is particularly useful for larger datasets and models that require significant computation time.
+- **Interoperability**: JSON is a widely-used data interchange format that can easily be read and utilized by various programming languages and applications. This facilitates sharing the model with others or integrating it into different systems.
+- **Human-Readable Format**: JSON’s structured format, combined with indentation, ensures that the exported model is human-readable. This allows for easier inspection and debugging of the trigram data.
+  
 
 ### Development
-(Insert development details for Task 4 here...)
+# Specify the name of the output file where the trigram model will be saved
+output_file = 'trigrams.json'
+# Call the function to export the trigram model to a JSON file
+export_trigram_model(combined_trigram_model, output_file)
+
+# Print the results
+print(f"Trigram model has been exported to {output_file}")  
 
 ### Results
-(Insert the output or explanation of results for Task 4 here...)
+Upon executing the export function, the trigram model is successfully saved to a file named trigrams.json. The output confirms the completion of the export process:  
+
+`Trigram model has been exported to trigrams.json`
+
+Here is very short version of  the JSON file for reference;
+
+`{
+    " LE": 2789,  
+    "LET": 1288, 
+    "ETT": 997,  
+    "TTE": 2141,  
+    "TER": 7254,  
+}`  
 
 ---
 
