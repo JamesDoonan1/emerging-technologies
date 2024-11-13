@@ -162,7 +162,7 @@ AINT OUSEVESHAVAND THAT ANTS ROCKE KING WED AS ANI SO MANDSONED AT JULAY OCIMP B
 ITS NOT TIALLY IND ROM NO SM THERES. HE SHE MOGNEXED THATILLPALL AGO. DEEBOURE O
 F HIP AN TO EL` 
 
-Also, when querying for possible next characters following **TH**, the outut shows the character probabilities based on their occurrences in the trigram model:  
+Also, when querying for possible next characters following **TH**, the output shows the character probabilities based on their occurrences in the trigram model:  
 
 `Possible next characters after 'TH':  
 
