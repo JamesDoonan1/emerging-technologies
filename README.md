@@ -341,7 +341,7 @@ https://github.com/JamesDoonan1/emerging-technologies/issues/41
    - Although external libraries were not used, SpaCy's text processing techniques provide inspiration for how to structure and clean data in NLP tasks.  
    - Available at: [https://spacy.io](https://spacy.io)  
 
-7. **ChatGPT by OpenAI**. (2024). *Assistance with Task 1 and project guidance*.  
+7. **ChatGPT by OpenAI**. (2024). *Assistance with Tasks and project guidance*.  
    - ChatGPT was used for help in understanding the task requirements, providing guidance on the development process, and assisting with the structure of the README file.  
    - Available at: [https://openai.com/chatgpt](https://openai.com/chatgpt)  
 8. **Weizenbaum, J**. (1966). ELIZA - A Computer Program For the Study of Natural Language Communication Between Man and Machine.
