@@ -2,11 +2,16 @@
 
 ## Table of Contents
 - [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
 - [Task 1: Trigram Model](#task-1-trigram-model)
 - [Task 2: Text Generation](#task-2-text-generation)
 - [Task 3: Model Analysis](#task-3-model-analysis)
 - [Task 4: Export Model to JSON](#task-4-export-model-to-json)
 - [ELIZA Chatbot Project](#eliza-chatbot-project)
+- [Testing](#testing)
+- [Manual Testing Results](#manual-testing-results)
 - [Final Thoughts and Challenges](#final-thoughts-and-challenges)
 - [References](#references)
 
@@ -15,6 +20,49 @@
 This project submission includes four tasks and a final project (ELIZA chatbot) that demonstrate the application of trigram models, text generation, model analysis, JSON exports, and chatbot implementation. The tasks are structured to showcase research, development, and thoughtful coding practices.
 
 ---
+## Installation
+To install and set up the project, follow these steps:
+
+1. **Clone the repository**:
+  ```bash
+  git clone https://github.com/JamesDoonan1/emerging-technologies.git
+  ```
+2. **Navigate to the project directory**:
+  ```bash
+  cd emerging-technologies
+  ```
+3. **Install the required dependencies**:
+  ```bash
+  pip install -r requirements.txt
+  ```
+4. Launch the project:
+   - For the Trigram Notebook: Open trigrams.ipynb in Jupyter Notebook and execute the cells sequentially.
+   - For ElIZA Chatbot: Navigate to eliza folder and open index.html in your web browser.
+
+## Usage
+To use the project, follow these steps:
+
+### Trigram Tasks
+1. Open `trigrams.ipynb` in Jupyter Notebook.
+2. Execute the cells sequentially to perform text analysis, generation, and model analysis tasks.
+3. Follow the comments and Markdown explanations in the notebook for guidance.
+
+### ELIZA Chatbot
+1. Navigate to the `eliza` folder.
+2. Open `index.html` in your web browser to start a conversation with the ELIZA chatbot.
+3. Use the chatbot interface to interact with ELIZA.
+
+## Dependencies
+The project relies on the following dependencies:
+
+- **Python 3.8+**: Ensure you have Python installed.
+- **NumPy**: For numerical computations and array handling.
+- **Jupyter Notebook**: For running the Trigram Notebook (`trigrams.ipynb`).
+
+
+To install these dependencies, use the provided `requirements.txt` file.
+
+
 
 ## Task 1: Trigram Model
 ### Research
