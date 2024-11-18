@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Overview](#overview)
+- [Live Demo](#live-demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
@@ -18,6 +19,12 @@
 
 ## Overview
 This project submission includes four tasks and a final project (ELIZA chatbot) that demonstrate the application of trigram models, text generation, model analysis, JSON exports, and chatbot implementation. The tasks are structured to showcase research, development, and thoughtful coding practices.
+
+---
+
+## Live Demo
+The ELIZA Chatbot has been deployed and is accessible at the following link:  
+[**ELIZA Chatbot Live Demo**](https://jamesdoonan1.github.io/emerging-technologies/)
 
 ---
 ## Installation
@@ -39,6 +46,7 @@ To install and set up the project, follow these steps:
    - For the Trigram Notebook: Open trigrams.ipynb in Jupyter Notebook and execute the cells sequentially.
    - For ElIZA Chatbot: Navigate to eliza folder and open index.html in your web browser.
 
+
 ## Usage
 To use the project, follow these steps:
 
@@ -51,6 +59,9 @@ To use the project, follow these steps:
 1. Navigate to the `eliza` folder.
 2. Open `index.html` in your web browser to start a conversation with the ELIZA chatbot.
 3. Use the chatbot interface to interact with ELIZA.
+
+Alternatively, you can use the deployed version of the chatbot:  
+[**ELIZA Chatbot Live Demo**](https://jamesdoonan1.github.io/emerging-technologies/)
 
 ## Dependencies
 The project relies on the following dependencies:
@@ -347,14 +358,15 @@ Extensive testing was conducted to ensure the functionality and responsiveness o
 A summary of the successful responses from the chatbot during testing is as follows:  
 
 ### Successful Response Table
-| **User Input**               | **Expected Response**                                                        | **Actual Response**                                                       | **Result**        | **Notes**                          |
-|------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------|-------------------------------------|
-| hello                        | "Hello! How are you feeling today?"                                          | Hi there! What’s on your mind?                                          | ✅ Correct        | Pattern matches correctly.         |
-| Good morning                 | "Good morning! How can I assist you today?"                                 | Good morning! What’s on your mind?                                      | ✅ Correct        | Pattern matches correctly.         |
-| who are you?                 | "I'm ELIZA, a virtual therapist. How can I support you today?"              | I'm here to listen and help you talk through things.                    | ✅ Correct        | Matches "who are you" pattern.     |
-| ...                          | ...                                                                          | ...                                                                     | ...               | ...                                 |
-| asdjklf                     | "Please tell me more."                                                      | Please tell me more.                                                    | ✅ Correct        | Nonsensical input handled well.    |
-| !@#$%^&*                    | "Let's change focus a bit... Tell me about your family."                   | Let's change focus a bit... Tell me about your family.                  | ✅ Correct        | Nonsensical characters handled well. |
+
+| **User Input**  | **Expected Response**                                          | **Actual Response**                                          | **Result**  | **Notes**                           |
+|------------------|---------------------------------------------------------------|-------------------------------------------------------------|-------------|--------------------------------------|
+| hello            | "Hello! How are you feeling today?"                           | "Hi there! What’s on your mind?"                            | ✅ Correct   | Pattern matches correctly.          |
+| Good morning     | "Good morning! How can I assist you today?"                   | "Good morning! What’s on your mind?"                        | ✅ Correct   | Pattern matches correctly.          |
+| who are you?     | "I'm ELIZA, a virtual therapist. How can I support you today?"| "I'm here to listen and help you talk through things."       | ✅ Correct   | Matches "who are you" pattern.      |
+| ...              | ...                                                           | ...                                                         | ...         | ...                                  |
+| asdjklf          | "Please tell me more."                                        | "Please tell me more."                                       | ✅ Correct   | Nonsensical input handled well.     |
+| !@#$%^&*         | "Let's change focus a bit... Tell me about your family."      | "Let's change focus a bit... Tell me about your family."     | ✅ Correct   | Nonsensical characters handled well. |
 
 ### Summary of Results
 Overall, the testing of the ELIZA Chatbot demonstrated that the majority of inputs were processed correctly, with responses matching expectations. Edge cases were also handled effectively, ensuring a robust user experience. For further examining of tests please follow this link to GitHub issues where more tests were performed.   
