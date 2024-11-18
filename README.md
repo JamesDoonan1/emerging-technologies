@@ -347,5 +347,9 @@ https://github.com/JamesDoonan1/emerging-technologies/issues/41
 8. **Weizenbaum, J**. (1966). ELIZA - A Computer Program For the Study of Natural Language Communication Between Man and Machine.
 
     - This paper presents ELIZA, one of the earliest examples of natural language processing. It outlines the design and functionality of the program, which serves as the foundation for modern chatbot development.
-    - Available at: http://www.ams.org/journals/bull/1966-72-6/S0002-9904-1966-12727-7/S0002-9904-1966-12727-7.pdf
+    - Available at: http://www.ams.org/journals/bull/1966-72-6/S0002-9904-1966-12727-7/S0002-9904-1966-12727-7.pdf  
+9. **GitHub Copilot**. (2024). *AI Pair Programmer for Code descriptions*.
+    - GitHub Copilot was used to assist in writing function descriptions and improving the documentation for various tasks in this
+    project. Its AI-driven suggestions helped streamline the coding and documentation process.
+    - Available at: https://github.com/features/copilot
 
