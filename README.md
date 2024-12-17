@@ -343,18 +343,10 @@ The ELIZA chatbot successfully simulates a conversation with the user by:
 
 ---
 ## Testing
-Tests include unit tests for key components, ensuring that individual functions operate as expected. Each output for all tasks are shown below and all tests can be found near the bottom of trigrams.ipynb.
-### **Task 1**
+Tests include unit tests for key components, ensuring that individual functions operate as expected. Each result for tasks 1 to 3 are shown below and all tests can be found near the bottom of trigrams.ipynb.
+### **Tasks 1-3**
 
-
-`test_build_trigram_model (main.TestBuildTrigramModel.test_build_trigram_model) ... ok   
-test_clean_text (main.TestCleanText.test_clean_text) ... ok   
-test_process_file (main.TestProcessFile.test_process_file) ... ok  
-test_process_multiple_files (main.TestProcessMultipleFiles.test_process_multiple_files) ... ok `
-
-Ran 4 tests in 0.028s
-
-OK
+![alt text](image.png)
 ---
 
 ## Manual Testing Results:  
