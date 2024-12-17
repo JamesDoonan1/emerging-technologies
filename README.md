@@ -345,8 +345,29 @@ The ELIZA chatbot successfully simulates a conversation with the user by:
 ## Testing
 Tests include unit tests for key components, ensuring that individual functions operate as expected. Each result for tasks 1 to 3 are shown below and all tests can be found near the bottom of trigrams.ipynb.
 ### **Tasks 1-3**
+### Test Results
 
-![alt text](image.png)
+| **Test Name**                                      | **Description**                                           | **Status** |
+|---------------------------------------------------|---------------------------------------------------------|------------|
+| `test_build_trigram_model`                        | Tests building the trigram model                        | ✅ OK      |
+| `test_clean_text`                                 | Tests cleaning text by removing unwanted characters     | ✅ OK      |
+| `test_extract_words`                              | Tests extracting words from text                        | ✅ OK      |
+| `test_generate_text_length`                       | Tests that generated text has the correct length        | ✅ OK      |
+| `test_generate_text_line_breaks`                  | Tests that generated text has proper line breaks        | ✅ OK      |
+| `test_load_words`                                 | Tests loading valid words from a file                   | ✅ OK      |
+| `test_print_trigram_possibilities`                | Tests printing trigram possibilities and probabilities  | ✅ OK      |
+| `test_print_trigram_possibilities_no_match`       | Tests handling of no matching trigrams                  | ✅ OK      |
+| `test_print_trigram_possibilities_no_match`       | Tests printing when no trigram possibilities exist      | ✅ OK      |
+| `test_process_file`                               | Tests processing a single file                          | ✅ OK      |
+| `test_process_multiple_files`                     | Tests processing multiple files and combining models    | ✅ OK      |
+
+---
+
+### Summary
+
+- **Total Tests Run**: **11**
+- **Execution Time**: **0.088s**
+- **Status**: ✅ All tests passed successfully.
 ---
 
 ## Manual Testing Results:  
